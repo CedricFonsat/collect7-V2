@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css" rel="stylesheet"/>
+		<title>Document</title>
+		<style>
+			body {
+				background-color: #111827;
+			}
+		</style>
+	</head>
+	<body>
+	{% include "./nav.twig" %}
+		<main class="py-12">
+			{% include "./main.twig" %}
+
+			{# ****************tendance collection******************************** #}
+	<section class="tendance-collection px-8">
+    		<article class="grid grid-cols-1 gap-4 mt-8">
+				<div class="max-w-full mt-8 p-6  rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+					<a href="#">
+						<h5 class="mb-2 text-4xl font-bold tracking-tight text-white ">Collection Tendance</h5>
+					</a>
+					<p class="mb-3 font-normal text-white dark:text-gray-400">Découvrez Notre Collection Tendance Mise À Jour Chaque Semaine.</p>
+				</div>
+			</article>
+
+           <article class="flex justify-center">
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-6">
+
+				<div class="max-w-sm  rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+					<a href="#">
+						<img class="rounded-t-lg" src="https://toygame.fr/wp-content/uploads/2022/11/Doc-Brown-genere-par-Midjourney.jpg" alt=""/>
+					</a>
+
+					<div class="py-2">
+						<div class="grid grid-cols-3 gap-2">
+							<div>
+								<img class="h-auto w-auto rounded-lg" src="https://midjourneyguide.com/wp-content/uploads/2022/12/masry_cartoon_d8976b4c-04f6-4071-baf1-4efe2216e84a.png" alt="image description">
+							</div>
+							<div>
+								<img class="h-auto w-auto rounded-lg" src="https://midjourneyguide.com/wp-content/uploads/2022/12/masry_cartoon_d8976b4c-04f6-4071-baf1-4efe2216e84a.png" alt="image description">
+							</div>
+							<div class="bg-green-500 rounded-lg flex justify-center items-center">
+								<p class="text-3xl text-white font-extrabold">+3</p>
+							</div>
+						</div>
+						<a href="#">
+							<h5 class="mb-2  mt-3 text-2xl font-bold tracking-tight text-white">Noteworthy technology</h5>
+						</a>
+					</div>
+				</div>
+				<div class="max-w-sm  rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+					<a href="#">
+						<img class="rounded-t-lg" src="https://toygame.fr/wp-content/uploads/2022/11/Doc-Brown-genere-par-Midjourney.jpg" alt=""/>
+					</a>
+
+					<div class="py-2">
+						<div class="grid grid-cols-3 gap-2">
+							<div>
+								<img class="h-auto w-auto rounded-lg" src="https://midjourneyguide.com/wp-content/uploads/2022/12/masry_cartoon_d8976b4c-04f6-4071-baf1-4efe2216e84a.png" alt="image description">
+							</div>
+							<div>
+								<img class="h-auto w-auto rounded-lg" src="https://midjourneyguide.com/wp-content/uploads/2022/12/masry_cartoon_d8976b4c-04f6-4071-baf1-4efe2216e84a.png" alt="image description">
+							</div>
+							<div class="bg-green-500 rounded-lg flex justify-center items-center">
+								<p class="text-3xl text-white font-extrabold">+3</p>
+							</div>
+						</div>
+						<a href="#">
+							<h5 class="mb-2 mt-3 text-2xl font-bold tracking-tight text-white">Noteworthy technology</h5>
+						</a>
+					</div>
+				</div>
+				<div class="max-w-sm  rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+					<a href="#">
+						<img class="rounded-t-lg" src="https://toygame.fr/wp-content/uploads/2022/11/Doc-Brown-genere-par-Midjourney.jpg" alt=""/>
+					</a>
+
+					<div class="py-2">
+						<div class="grid grid-cols-3 gap-2">
+							<div>
+								<img class="h-auto w-auto rounded-lg" src="https://midjourneyguide.com/wp-content/uploads/2022/12/masry_cartoon_d8976b4c-04f6-4071-baf1-4efe2216e84a.png" alt="image description">
+							</div>
+							<div>
+								<img class="h-auto w-auto rounded-lg" src="https://midjourneyguide.com/wp-content/uploads/2022/12/masry_cartoon_d8976b4c-04f6-4071-baf1-4efe2216e84a.png" alt="image description">
+							</div>
+							<div class="bg-green-500 rounded-lg flex justify-center items-center">
+								<p class="text-3xl text-white font-extrabold">+3</p>
+							</div>
+						</div>
+						<a href="#">
+							<h5 class="mb-2  mt-3 text-2xl font-bold tracking-tight text-white">Noteworthy technology</h5>
+						</a>
+					</div>
+				</div>
+			</div>
+       </article>
+    </section>
+
+			{# ***************best collection********************************** #}
+	<section id="best-collection" class="px-8">
+    		<article class="grid grid-cols-1 gap-4 mt-8">
+				<div class="max-w-full mt-8 p-6  rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+					<a href="#">
+						<h5 class="mb-2 text-4xl font-bold tracking-tight text-white ">Meilleurs collectionneurs</h5>
+					</a>
+					<p class="mb-3 font-normal text-white dark:text-gray-400">Découvrez les collectionneurs les plus actifs.</p>
+				</div>
+			</article>
+
+			<article class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-6">
+				<div class="p-3 bg-purple-500 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+					<div class="flex flex-col items-center">
+						<div class="relative">
+							<img class="w-17 h-17 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="">
+							<span class="flex justify-center items-center bottom-2  absolute  w-8 h-8 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full">1</span>
+						</div>
+						<div class="flex items-center flex-col font-medium dark:text-white">
+							<div>Jese Leos</div>
+							<div class="text-sm text-white dark:text-gray-400">Joined in August 2014</div>
+						</div>
+					</div>
+				</div>
+                <div class="p-3 bg-purple-500 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+					<div class="flex flex-col items-center">
+						<div class="relative">
+							<img class="w-17 h-17 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="">
+							<span class="flex justify-center items-center bottom-2  absolute  w-8 h-8 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full">1</span>
+						</div>
+						<div class="flex items-center flex-col font-medium dark:text-white">
+							<div>Jese Leos</div>
+							<div class="text-sm text-white dark:text-gray-400">Joined in August 2014</div>
+						</div>
+					</div>
+				</div>
+                <div class="p-3 bg-opacity-40 bg-purple-500  rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+					<div class="flex flex-col items-center">
+						<div class="relative">
+							<img class="w-17 h-17 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="">
+							<span class="flex justify-center items-center bottom-2  absolute  w-8 h-8 bg-green-400 border-2  dark:border-gray-800 rounded-full">1</span>
+						</div>
+						<div class="flex items-center flex-col font-medium dark:text-white">
+							<div>Jese Leos</div>
+							<div class="text-sm text-white dark:text-gray-400">Joined in August 2014</div>
+						</div>
+					</div>
+				</div>
+                <div class="p-3 bg-purple-500 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+					<div class="flex flex-col items-center">
+						<div class="relative">
+							<img class="w-17 h-17 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="">
+							<span class="flex justify-center items-center bottom-2  absolute  w-8 h-8 bg-green-400 border-2  dark:border-gray-800 rounded-full">1</span>
+						</div>
+						<div class="flex items-center flex-col font-medium dark:text-white">
+							<div>Jese Leos</div>
+							<div class="text-sm text-white dark:text-gray-400">Joined in August 2014</div>
+						</div>
+					</div>
+				</div>
+			</article>
+    </section>
+            {# ***************card discovery********************************** #}
+    <section id="card-discovery" class="flex items-center flex-col px-8">
+    	<article class="grid grid-cols-1 gap-4 mt-8">
+				<div class="max-w-full mt-8 p-6  rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+					<a href="#">
+						<h5 class="mb-2 text-4xl font-bold tracking-tight text-white ">Découvrez plus de cartes</h5>
+					</a>
+					<p class="mb-3 font-normal text-white dark:text-gray-400">Explorez les nouvelles cartes tendance.</p>
+				</div>
+			</article>
+
+        <article class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-6">
+             <div>
+                  <figure class="max-w-lg bg-white">
+                    <img class="h-auto max-w-full " src="https://flowbite.com/docs/images/examples/image-3@2x.jpg" alt="image description">
+                    <figcaption class="mt-2 p-2 text-sm text-center text-gray-500 dark:text-gray-400">Image caption</figcaption>
+                  </figure>
+             </div>
+               <div>
+                  <figure class="max-w-lg bg-white">
+                    <img class="h-auto max-w-full " src="https://flowbite.com/docs/images/examples/image-3@2x.jpg" alt="image description">
+                    <figcaption class="mt-2 p-2 text-sm text-center text-gray-500 dark:text-gray-400">Image caption</figcaption>
+                  </figure>
+             </div>
+              <div>
+                  <figure class="max-w-lg bg-white">
+                    <img class="h-auto max-w-full " src="https://flowbite.com/docs/images/examples/image-3@2x.jpg" alt="image description">
+                    <figcaption class="mt-2 p-2 text-sm text-center text-gray-500 dark:text-gray-400">Image caption</figcaption>
+                  </figure>
+             </div>
+        </article>
+
+    </section>
+
+    <section id="event-carousel" class="w-full h-52 md:h-96 bg-gray-50 overflow-hidden">
+    
+       <a href="#">
+            <img class="h-96" src="https://thumbs.dreamstime.com/b/sun-rayonne-l-horizontal-de-montagne-5721010.jpg" alt="image description">
+       </a>
+
+    </section>
+
+		</main>
+        {% include "./footer.twig" %}
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
+	</body>
+</html>
