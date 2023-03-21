@@ -1,5 +1,5 @@
-import userModel from "../models/userModel.js";
-import { cryptPassword, comparePassword } from "../dependencies/bcrypt.js";
+import userModel from "../model/userModel.js";
+// import { cryptPassword, comparePassword } from "../dependencies/bcrypt.js";
 
 export class userController {
 

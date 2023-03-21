@@ -1,4 +1,4 @@
-import overviewModel from "../models/overviewModel.js";
+import overviewModel from "../model/overviewModel.js";
 
 export class overviewController {
     static async setAddOverview(req) {
