@@ -1,10 +1,9 @@
 import { Router } from "express";
-import multer from "multer";
-import cardModel from "../models/cardModel.js";
 import 'dotenv/config'
-import userController from "../controllers/userController.js";
-import collectionModel from "../models/collectionModel.js";
-import userModel from "../models/userModel.js";
+import userController from "../controller/userController.js";
+import collectionModel from "../model/collectionModel.js";
+import userModel from "../model/userModel.js";
+import cardModel from "../model/cardModel.js";
 
 const visitorRouter = Router();
 

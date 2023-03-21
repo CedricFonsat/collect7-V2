@@ -1,9 +1,9 @@
 import { Router } from "express";
-import userModel from "../models/userModel.js";
-import collectionModel from "../models/collectionModel.js";
-import cardModel from "../models/cardModel.js";
-import { uploadAvatar } from "../dependencies/multer.js"
-import userController from "../controller/userController"
+import userModel from "../model/userModel.js";
+import collectionModel from "../model/collectionModel.js";
+import cardModel from "../model/cardModel.js";
+// import { uploadAvatar } from "../dependencies/multer.js";
+import userController from "../controller/userController.js"
 
 const userRouter = Router();
 
