@@ -1,23 +1,23 @@
 import { Router } from "express";
-import collectionController from "../controllers/collectionController.js";
-import userController from "../controllers/userController.js"
-import collectionModel from "../models/collectionModel.js";
-import userModel from "../models/userModel.js"
-import cardController from "../controllers/cardController.js"
-import { uploadCard, uploadCollections } from "../dependencies/multer.js"
-import cardModel from "../models/cardModel.js";
+import collectionController from "../controller/collectionController.js";
+import userController from "../controller/userController.js"
+import collectionModel from "../model/collectionModel.js";
+import userModel from "../model/userModel.js"
+import cardController from "../controller/cardController.js"
+// import { uploadCard, uploadCollections } from "../dependencies/multer.js"
+import cardModel from "../model/cardModel.js";
 
 const adminRouter = Router();
 
 
-adminRouter.get("/dashboard", async (req, res) => {
+adminRouter.get("/admin", async (req, res) => {
     try {
         let collection = await collectionModel.find(req.body);
         let users = await userModel.find(req.body);
         let usersCount = await userModel.find(req.body).count();
         let collectionCount = await collectionModel.find(req.body).count();
         let cardCount = await cardModel.find(req.body).count();
-        res.render("admin/dashboard.twig", {
+        res.render("admin/index.html.twig", {
             collection: collection,
             users: users,
             usersCount: usersCount,
