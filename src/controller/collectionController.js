@@ -1,4 +1,4 @@
-import collectionModel from "../models/collectionModel.js";
+import collectionModel from "../model/collectionModel.js";
 
 export class collectionController {
     static async setAddCollection(req) {

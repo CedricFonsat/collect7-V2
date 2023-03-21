@@ -1,5 +1,5 @@
-import cardModel from "../models/cardModel.js";
-import collectionModel from "../models/collectionModel.js";
+import cardModel from "../model/cardModel.js";
+import collectionModel from "../model/collectionModel.js";
 
 export class cardController {
 
