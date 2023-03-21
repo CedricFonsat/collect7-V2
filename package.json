@@ -11,6 +11,9 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
+    "@adminjs/express": "^5.1.0",
+    "@adminjs/mongoose": "^3.0.3",
+    "adminjs": "^6.8.7",
     "bcrypt": "^5.1.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",

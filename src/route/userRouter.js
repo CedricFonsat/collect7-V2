@@ -144,17 +144,17 @@ userRouter.get("/account/update/:id", async (req, res) => {
   }
 });
 
-userRouter.post("/account/update/:id", uploadAvatar.single('avatar'), async (req, res) => {
-  try {
-    if (req.file) {
-      req.body.avatar = req.file.filename;
-    }
-    await userModel.updateOne({ _id: req.params.id }, req.body);
-    res.redirect('/account')
-  } catch (error) {
-    res.send(error);
-  }
-});
+// userRouter.post("/account/update/:id", uploadAvatar.single('avatar'), async (req, res) => {
+//   try {
+//     if (req.file) {
+//       req.body.avatar = req.file.filename;
+//     }
+//     await userModel.updateOne({ _id: req.params.id }, req.body);
+//     res.redirect('/account')
+//   } catch (error) {
+//     res.send(error);
+//   }
+// });
 
 userRouter.get("/buy/:cardId", async (res) => {
   try {

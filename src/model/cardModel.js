@@ -7,7 +7,7 @@ const cardSchema = new mongoose.Schema({
         type: String,
         required: [true, "Pas de nom de carte"]
     },
-    collection: {
+    collectionCard: {
         type: String,
         required: [true, "Pas de collection"]
     },
