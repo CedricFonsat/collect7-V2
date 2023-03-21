@@ -1,34 +1,67 @@
-<!DOCTYPE html>
-<html lang="fr">
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css" rel="stylesheet"/>
-		<title>Document</title>
-		<style>
-			body {
-				background-color: #111827;
-			}
-		</style>
-	</head>
-	<body>
-	{% include "./nav.twig" %}
-		<main class="py-12">
-			{% include "./main.twig" %}
+{% extends "base.html.twig" %}
 
-			{# ****************tendance collection******************************** #}
+
+
+
+{% block body %}
+<main class="py-12">
+	<section class="px-6 py-12">
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+			<div class=" h-auto max-w-full p-6 bg-transparent rounded-lg dark:bg-gray-800 dark:border-gray-700">
+				<a href="#">
+					<h5 class="mb-2 text-5xl lg:text-6xl font-bold tracking-tight  text-white">Découvrez et
+						<span class="text-green-500">collectionnez</span>
+						des cartes</h5>
+				</a>
+				<p class="mb-3 font-normal text-white dark:text-gray-400">Collectionnez, Achetez Et Vendez Des Cartes De Plus De 2 Collections.</p>
+				<a href="#" class="mt-10 inline-flex items-center px-8 py-5 text-sm font-medium text-center text-white bg-green-700 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
+					Read more
+					<svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+					</svg>
+				</a>
+				<dl class="flex text-gray-900  dark:text-white mt-10">
+					<div class="items-start justify-center w-30">
+						<dt class="mb-2 text-3xl text-white font-extrabold">1B+</dt>
+						<dd class="font-light text-gray-500 dark:text-gray-400">Vente totale</dd>
+					</div>
+					<div class="flex flex-col items-start justify-center w-30 ml-6">
+						<dt class="mb-2 text-3xl text-white font-extrabold">90+</dt>
+						<dd class="font-light text-gray-500 dark:text-gray-400">Cartes</dd>
+					</div>
+					<div class="flex flex-col items-start justify-center w-30 ml-6">
+						<dt class="mb-2 text-3xl text-white font-extrabold">4M+</dt>
+						<dd class="font-light text-gray-500 dark:text-gray-400">Collections</dd>
+					</div>
+				</dl>
+			</div>
+
+
+			<div class="flex justify-center">
+
+				<figure class="max-w-md bg-white">
+					<img class="h-auto max-w-full" src="https://upload.wikimedia.org/wikipedia/commons/a/a9/A_mechanical_dove_8274822e-52fe-40fa-ac4d-f3cde5a332ae.png" alt="image description">
+					<figcaption class="mt-2 text-sm text-center text-gray-500 dark:text-gray-400">Image caption</figcaption>
+				</figure>
+
+			</div>
+
+
+		</div>
+	</section>
+
+	{# ****************tendance collection******************************** #}
 	<section class="tendance-collection px-8">
-    		<article class="grid grid-cols-1 gap-4 mt-8">
-				<div class="max-w-full mt-8 p-6  rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-					<a href="#">
-						<h5 class="mb-2 text-4xl font-bold tracking-tight text-white ">Collection Tendance</h5>
-					</a>
-					<p class="mb-3 font-normal text-white dark:text-gray-400">Découvrez Notre Collection Tendance Mise À Jour Chaque Semaine.</p>
-				</div>
-			</article>
+		<article class="grid grid-cols-1 gap-4 mt-8">
+			<div class="max-w-full mt-8 p-6  rounded-lg dark:bg-gray-800 dark:border-gray-700">
+				<a href="#">
+					<h5 class="mb-2 text-4xl font-bold tracking-tight text-white ">Collection Tendance</h5>
+				</a>
+				<p class="mb-3 font-normal text-white dark:text-gray-400">Découvrez Notre Collection Tendance Mise À Jour Chaque Semaine.</p>
+			</div>
+		</article>
 
-           <article class="flex justify-center">
+		<article class="flex justify-center">
 			<div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-6">
 
 				<div class="max-w-sm  rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
@@ -98,115 +131,111 @@
 					</div>
 				</div>
 			</div>
-       </article>
-    </section>
+		</article>
+	</section>
 
-			{# ***************best collection********************************** #}
+	{# ***************best collection********************************** #}
 	<section id="best-collection" class="px-8">
-    		<article class="grid grid-cols-1 gap-4 mt-8">
-				<div class="max-w-full mt-8 p-6  rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-					<a href="#">
-						<h5 class="mb-2 text-4xl font-bold tracking-tight text-white ">Meilleurs collectionneurs</h5>
-					</a>
-					<p class="mb-3 font-normal text-white dark:text-gray-400">Découvrez les collectionneurs les plus actifs.</p>
-				</div>
-			</article>
+		<article class="grid grid-cols-1 gap-4 mt-8">
+			<div class="max-w-full mt-8 p-6  rounded-lg dark:bg-gray-800 dark:border-gray-700">
+				<a href="#">
+					<h5 class="mb-2 text-4xl font-bold tracking-tight text-white ">Meilleurs collectionneurs</h5>
+				</a>
+				<p class="mb-3 font-normal text-white dark:text-gray-400">Découvrez les collectionneurs les plus actifs.</p>
+			</div>
+		</article>
 
-			<article class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-6">
-				<div class="p-3 bg-purple-500 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-					<div class="flex flex-col items-center">
-						<div class="relative">
-							<img class="w-17 h-17 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="">
-							<span class="flex justify-center items-center bottom-2  absolute  w-8 h-8 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full">1</span>
-						</div>
-						<div class="flex items-center flex-col font-medium dark:text-white">
-							<div>Jese Leos</div>
-							<div class="text-sm text-white dark:text-gray-400">Joined in August 2014</div>
-						</div>
+		<article class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-6">
+			<div class="p-3 bg-gray-800 rounded-lg dark:bg-gray-800 dark:border-gray-700">
+				<div class="flex flex-col items-center">
+					<div class="relative">
+						<img class="w-17 h-17 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="">
+						<span class="flex justify-center items-center bottom-2  absolute  w-8 h-8 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full">1</span>
+					</div>
+					<div class="flex items-center flex-col font-medium dark:text-white">
+						<div class="text-white">Jese Leos</div>
+						<div class="text-sm text-white dark:text-gray-400">Joined in August 2014</div>
 					</div>
 				</div>
-                <div class="p-3 bg-purple-500 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-					<div class="flex flex-col items-center">
-						<div class="relative">
-							<img class="w-17 h-17 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="">
-							<span class="flex justify-center items-center bottom-2  absolute  w-8 h-8 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full">1</span>
-						</div>
-						<div class="flex items-center flex-col font-medium dark:text-white">
-							<div>Jese Leos</div>
-							<div class="text-sm text-white dark:text-gray-400">Joined in August 2014</div>
-						</div>
+			</div>
+			<div class="p-3 bg-gray-800 rounded-lg dark:bg-gray-800 dark:border-gray-700">
+				<div class="flex flex-col items-center">
+					<div class="relative">
+						<img class="w-17 h-17 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="">
+						<span class="flex justify-center items-center bottom-2  absolute  w-8 h-8 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full">1</span>
+					</div>
+					<div class="flex items-center flex-col font-medium dark:text-white">
+						<div>Jese Leos</div>
+						<div class="text-sm text-white dark:text-gray-400">Joined in August 2014</div>
 					</div>
 				</div>
-                <div class="p-3 bg-opacity-40 bg-purple-500  rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-					<div class="flex flex-col items-center">
-						<div class="relative">
-							<img class="w-17 h-17 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="">
-							<span class="flex justify-center items-center bottom-2  absolute  w-8 h-8 bg-green-400 border-2  dark:border-gray-800 rounded-full">1</span>
-						</div>
-						<div class="flex items-center flex-col font-medium dark:text-white">
-							<div>Jese Leos</div>
-							<div class="text-sm text-white dark:text-gray-400">Joined in August 2014</div>
-						</div>
+			</div>
+			<div class="p-3 bg-opacity-40 bg-gray-800  rounded-lg dark:bg-gray-800 dark:border-gray-700">
+				<div class="flex flex-col items-center">
+					<div class="relative">
+						<img class="w-17 h-17 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="">
+						<span class="flex justify-center items-center bottom-2  absolute  w-8 h-8 bg-green-400 border-2  dark:border-gray-800 rounded-full">1</span>
+					</div>
+					<div class="flex items-center flex-col font-medium dark:text-white">
+						<div>Jese Leos</div>
+						<div class="text-sm text-white dark:text-gray-400">Joined in August 2014</div>
 					</div>
 				</div>
-                <div class="p-3 bg-purple-500 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-					<div class="flex flex-col items-center">
-						<div class="relative">
-							<img class="w-17 h-17 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="">
-							<span class="flex justify-center items-center bottom-2  absolute  w-8 h-8 bg-green-400 border-2  dark:border-gray-800 rounded-full">1</span>
-						</div>
-						<div class="flex items-center flex-col font-medium dark:text-white">
-							<div>Jese Leos</div>
-							<div class="text-sm text-white dark:text-gray-400">Joined in August 2014</div>
-						</div>
+			</div>
+			<div class="p-3 bg-gray-800 rounded-lg dark:bg-gray-800 dark:border-gray-700">
+				<div class="flex flex-col items-center">
+					<div class="relative">
+						<img class="w-17 h-17 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="">
+						<span class="flex justify-center items-center bottom-2  absolute  w-8 h-8 bg-green-400 border-2  dark:border-gray-800 rounded-full">1</span>
+					</div>
+					<div class="flex items-center flex-col font-medium dark:text-white">
+						<div>Jese Leos</div>
+						<div class="text-sm text-white dark:text-gray-400">Joined in August 2014</div>
 					</div>
 				</div>
-			</article>
-    </section>
-            {# ***************card discovery********************************** #}
-    <section id="card-discovery" class="flex items-center flex-col px-8">
-    	<article class="grid grid-cols-1 gap-4 mt-8">
-				<div class="max-w-full mt-8 p-6  rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-					<a href="#">
-						<h5 class="mb-2 text-4xl font-bold tracking-tight text-white ">Découvrez plus de cartes</h5>
-					</a>
-					<p class="mb-3 font-normal text-white dark:text-gray-400">Explorez les nouvelles cartes tendance.</p>
-				</div>
-			</article>
+			</div>
+		</article>
+	</section>
+	{# ***************card discovery********************************** #}
+	<section id="card-discovery" class="px-8">
+		<article class="grid grid-cols-1 gap-4 mt-8">
+			<div class="max-w-full mt-8 p-6  rounded-lg dark:bg-gray-800 dark:border-gray-700">
+				<a href="#">
+					<h5 class="mb-2 text-4xl font-bold tracking-tight text-white ">Découvrez plus de cartes</h5>
+				</a>
+				<p class="mb-3 font-normal text-white dark:text-gray-400">Explorez les nouvelles cartes tendance.</p>
+			</div>
+		</article>
 
-        <article class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-6">
-             <div>
-                  <figure class="max-w-lg bg-white">
-                    <img class="h-auto max-w-full " src="https://flowbite.com/docs/images/examples/image-3@2x.jpg" alt="image description">
-                    <figcaption class="mt-2 p-2 text-sm text-center text-gray-500 dark:text-gray-400">Image caption</figcaption>
-                  </figure>
-             </div>
-               <div>
-                  <figure class="max-w-lg bg-white">
-                    <img class="h-auto max-w-full " src="https://flowbite.com/docs/images/examples/image-3@2x.jpg" alt="image description">
-                    <figcaption class="mt-2 p-2 text-sm text-center text-gray-500 dark:text-gray-400">Image caption</figcaption>
-                  </figure>
-             </div>
-              <div>
-                  <figure class="max-w-lg bg-white">
-                    <img class="h-auto max-w-full " src="https://flowbite.com/docs/images/examples/image-3@2x.jpg" alt="image description">
-                    <figcaption class="mt-2 p-2 text-sm text-center text-gray-500 dark:text-gray-400">Image caption</figcaption>
-                  </figure>
-             </div>
-        </article>
+		<article class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-6">
+			<div>
+				<figure class="max-w-lg bg-white">
+					<img class="h-auto max-w-full " src="https://flowbite.com/docs/images/examples/image-3@2x.jpg" alt="image description">
+					<figcaption class="mt-2 p-2 text-sm text-center text-gray-500 dark:text-gray-400">Image caption</figcaption>
+				</figure>
+			</div>
+			<div>
+				<figure class="max-w-lg bg-white">
+					<img class="h-auto max-w-full " src="https://flowbite.com/docs/images/examples/image-3@2x.jpg" alt="image description">
+					<figcaption class="mt-2 p-2 text-sm text-center text-gray-500 dark:text-gray-400">Image caption</figcaption>
+				</figure>
+			</div>
+			<div>
+				<figure class="max-w-lg bg-white">
+					<img class="h-auto max-w-full " src="https://flowbite.com/docs/images/examples/image-3@2x.jpg" alt="image description">
+					<figcaption class="mt-2 p-2 text-sm text-center text-gray-500 dark:text-gray-400">Image caption</figcaption>
+				</figure>
+			</div>
+		</article>
 
-    </section>
+	</section>
 
-    <section id="event-carousel" class="w-full h-52 md:h-96 bg-gray-50 overflow-hidden">
-    
-       <a href="#">
-            <img class="h-96" src="https://thumbs.dreamstime.com/b/sun-rayonne-l-horizontal-de-montagne-5721010.jpg" alt="image description">
-       </a>
+	<section id="event-carousel" class="w-full h-52 md:h-96 bg-gray-800 overflow-hidden">
 
-    </section>
+		<a href="#">
+			<img class="h-96" src="" alt="image description">
+		</a>
 
-		</main>
-        {% include "./footer.twig" %}
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
-	</body>
-</html>
+	</section>
+</main>
+{% endblock %}

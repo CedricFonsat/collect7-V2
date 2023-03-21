@@ -1,0 +1,111 @@
+{% extends "base.html.twig" %}
+
+
+{% block body %}
+	<section class="w-full h-52 md:h-80 relative bg-blue-500 flex justify-center items-center">
+				<article>
+					<dl class="flex text-gray-900  dark:text-white mt-10 mb-6">
+						<div class="items-center justify-center w-30">
+							<dt class="mb-2 text-3xl text-white font-extrabold">65</dt>
+							<dd class="font-light text-white">Cartes</dd>
+						</div>
+						<div class="flex flex-col items-center justify-center w-30 ml-6">
+							<dt class="mb-2 text-3xl text-white font-extrabold">2</dt>
+							<dd class="font-light text-white">Ventes</dd>
+						</div>
+						<div class="flex flex-col items-center w-30 ml-6">
+							<dt class="mb-2 text-3xl text-white font-extrabold">9</dt>
+							<dd class="font-light text-white">Abonnés</dd>
+						</div>
+						<div class="flex flex-col items-center justify-center w-30 ml-6">
+							<dt class="mb-2 text-3xl text-white font-extrabold">102</dt>
+							<dd class="font-light text-white">Suivi(e)s</dd>
+						</div>
+					</dl>
+				</article>
+				{# <img class="h-auto max-w-full" src="./img/0alors.png" alt="image description"> #}
+			</section>
+			<section class="my-4 p-6">
+				<article class="grid grid-cols-1">
+					<div class="p-4">
+						<img class="rounded w-36 h-36" src="https://flowbite.com/docs/images/people/profile-picture-3.jpg" alt="Extra large avatar">
+					</div>
+				</article>
+				<h1 class="text-4xl font-extrabold text-white">Jack Spa Rond<span class="bg-blue-100 text-blue-800 text-2xl font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-2">PRO</span>
+				</h1>
+				<article>
+					<div class="mb-4  border-gray-200 dark:border-gray-700">
+						<ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="myTab" data-tabs-toggle="#myTabContent" role="tablist">
+							<li class="mr-2" role="presentation">
+								<button class="inline-block p-4 border-b-2 rounded-t-lg" id="profile-tab" data-tabs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Profile</button>
+							</li>
+							<li class="mr-2" role="presentation">
+								<button class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="dashboard-tab" data-tabs-target="#dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="false">Cartes</button>
+							</li>
+							<li class="mr-2" role="presentation">
+								<button class="inline-block p-4 border-b-2  rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="settings-tab" data-tabs-target="#settings" type="button" role="tab" aria-controls="settings" aria-selected="false">Parametre</button>
+							</li>
+						</ul>
+					</div>
+					<div id="myTabContent">
+						<div
+							class="hidden p-4 rounded-lg  dark:bg-gray-800" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+							{# hvhdddvyddd #}
+							<article class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+								<div>
+									<figure class="max-w-lg bg-white">
+										<img class="h-auto max-w-full " src="https://flowbite.com/docs/images/examples/image-3@2x.jpg" alt="image description">
+										<figcaption class="mt-2 p-2 text-sm text-center text-gray-500 dark:text-gray-400">Image caption</figcaption>
+									</figure>
+								</div>
+
+								<div>
+									<figure class="max-w-lg bg-white">
+										<img class="h-auto max-w-full " src="https://flowbite.com/docs/images/examples/image-3@2x.jpg" alt="image description">
+										<figcaption class="mt-2 p-2 text-sm text-center text-gray-500 dark:text-gray-400">Image caption</figcaption>
+									</figure>
+								</div>
+								<div>
+									<figure class="max-w-lg bg-white">
+										<img class="h-auto max-w-full " src="https://flowbite.com/docs/images/examples/image-3@2x.jpg" alt="image description">
+										<figcaption class="mt-2 p-2 text-sm text-center text-gray-500 dark:text-gray-400">Image caption</figcaption>
+									</figure>
+								</div>
+								{# gckvlkhkvevdvedvudeuvedvudueuedudeuvevu #}
+							</div>
+							<div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
+								<p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the
+									<strong class="font-medium text-gray-800 dark:text-white">Dashboard tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
+							</div>
+							<div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+
+								<form>
+									<div class="mb-6">
+										<label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
+										<input type="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="name@flowbite.com" required>
+									</div>
+									<div class="mb-6">
+										<label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your password</label>
+										<input type="password" id="password" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required>
+									</div>
+									<div class="mb-6">
+										<label for="repeat-password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Repeat password</label>
+										<input type="password" id="repeat-password" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required>
+									</div>
+									<div class="flex items-start mb-6">
+										<div class="flex items-center h-5">
+											<input id="terms" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800" required>
+										</div>
+										<label for="terms" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">I agree with the
+											<a href="#" class="text-blue-600 hover:underline dark:text-blue-500">terms and conditions</a>
+										</label>
+									</div>
+                                    <button data-modal-target="defaultModal" data-modal-toggle="defaultModal" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Toggle modal
+                                    </button>
+                                    {% include "./_modal-edit-account.twig" %}
+								</form>
+							</div>
+						</div>
+					</article>
+				</section>
+{% endblock %}
