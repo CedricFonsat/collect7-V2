@@ -19,8 +19,11 @@ const userSchema = new mongoose.Schema({
     type: String,
     default: url
   },
+  cardsSold: {
+    type: [],
+    required: [false, "Pas de carte(s) vendu"]
+  },
   cards: { type: [{ type: mongoose.Schema.Types.ObjectId, ref: "card" }] },
-  cardsSold: { type: [{ type: mongoose.Schema.Types.ObjectId, ref: "cardsSold" }] },
   following: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
   followers: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
   wallet: {

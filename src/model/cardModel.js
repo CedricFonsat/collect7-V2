@@ -7,10 +7,6 @@ const cardSchema = new mongoose.Schema({
         type: String,
         required: [true, "Pas de nom de carte"]
     },
-    collectionCard: {
-        type: String,
-        required: [true, "Pas de collection"]
-    },
     price: {
         type: Number,
         required: [true, "Pas de prix de carte"]
@@ -19,8 +15,11 @@ const cardSchema = new mongoose.Schema({
         type: String,
         default: url
     },
+    collections: {
+        type: [],
+        required: [true, "Pas de collection"]
+    },
     ifAvalaible: { type: Number, default: 1 },
-    collections: { type: mongoose.Schema.Types.ObjectId, ref: "Collection" },
     users: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
 })
 
