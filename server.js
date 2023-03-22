@@ -5,7 +5,7 @@ import session from "express-session";
 import "dotenv/config";
 import visitorRouter from "./src/route/visitorRouter.js";
 import userRouter from "./src/route/userRouter.js";
-import adminRoute from './admin.js';
+import adminRouter from './src/route/adminRouter.js';
 
 
 const db = process.env.BDD_URL;
@@ -24,12 +24,10 @@ app.use(express.static("./assets"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use(adminRoute);
-app.use("/admin", adminRoute)
-
 app.use(router);
 router.use(visitorRouter);
 router.use(userRouter);
+router.use(adminRouter);
 
 
 
