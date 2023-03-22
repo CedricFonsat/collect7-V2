@@ -75,16 +75,16 @@ adminRouter.get("/dashboardCollection/:id", async (req, res) => {
     }
 });
 
-adminRouter.post("/dashboardCollectionAdd", uploadCollections.single('imageCollection')
-    , async (req, res) => {
-        try {
-            await collectionController.setAddCollection(req, res);
-            res.redirect("/dashboardCollection");
-            console.log("add collection");
-        } catch (error) {
-            res.send(error);
-        }
-    });
+// adminRouter.post("/dashboardCollectionAdd", uploadCollections.single('imageCollection')
+//     , async (req, res) => {
+//         try {
+//             await collectionController.setAddCollection(req, res);
+//             res.redirect("/dashboardCollection");
+//             console.log("add collection");
+//         } catch (error) {
+//             res.send(error);
+//         }
+//     });
 
 adminRouter.get("/dashboardCollectionUpdate/:id", async (req, res) => {
     try {
@@ -97,17 +97,17 @@ adminRouter.get("/dashboardCollectionUpdate/:id", async (req, res) => {
     }
 });
 
-adminRouter.post("/dashboardCollectionUpdate/:id", uploadCollections.single('imageCollection'), async (req, res) => {
-    try {
-        if (req.file) {
-            req.body.imageCollection = req.file.filename;
-        }
-        await collectionModel.updateOne({ _id: req.params.id }, req.body);
-        res.redirect('/dashboardCollection')
-    } catch (error) {
-        res.send(error);
-    }
-});
+// adminRouter.post("/dashboardCollectionUpdate/:id", uploadCollections.single('imageCollection'), async (req, res) => {
+//     try {
+//         if (req.file) {
+//             req.body.imageCollection = req.file.filename;
+//         }
+//         await collectionModel.updateOne({ _id: req.params.id }, req.body);
+//         res.redirect('/dashboardCollection')
+//     } catch (error) {
+//         res.send(error);
+//     }
+// });
 
 
 /* CARD */
@@ -134,15 +134,15 @@ adminRouter.get("/dashboardCard/:id", async (req, res) => {
     }
 });
 
-adminRouter.post("/dashboardCard", uploadCard.single('imageCard'), async (req, res) => {
-    try {
-        await cardController.setAddCard(req, res);
-        res.redirect("/dashboardCard");
-        console.log("card successful");
-    } catch (error) {
-        res.send(error);
-    }
-});
+// adminRouter.post("/dashboardCard", uploadCard.single('imageCard'), async (req, res) => {
+//     try {
+//         await cardController.setAddCard(req, res);
+//         res.redirect("/dashboardCard");
+//         console.log("card successful");
+//     } catch (error) {
+//         res.send(error);
+//     }
+// });
 
 adminRouter.get("/dashboardCardUpdate/:id", async (req, res) => {
     try {
@@ -157,14 +157,16 @@ adminRouter.get("/dashboardCardUpdate/:id", async (req, res) => {
     }
 });
 
-adminRouter.post("/dashboardCardUpdate/:id", uploadCard.single('imageCard'), async (req, res) => {
-    try {
-        if (req.file) {
-            req.body.imageCard = req.file.filename;
-        }
-        await cardModel.updateOne({ _id: req.params.id }, req.body);
-        res.redirect('/dashboardCard')
-    } catch (error) {
-        res.send(error);
-    }
-});
+// adminRouter.post("/dashboardCardUpdate/:id", uploadCard.single('imageCard'), async (req, res) => {
+//     try {
+//         if (req.file) {
+//             req.body.imageCard = req.file.filename;
+//         }
+//         await cardModel.updateOne({ _id: req.params.id }, req.body);
+//         res.redirect('/dashboardCard')
+//     } catch (error) {
+//         res.send(error);
+//     }
+// });
+
+export default adminRouter;
