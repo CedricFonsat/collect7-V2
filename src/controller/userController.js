@@ -1,5 +1,5 @@
 import userModel from "../model/userModel.js";
-// import { cryptPassword, comparePassword } from "../dependencies/bcrypt.js";
+import { cryptPassword, comparePassword } from "../service/bcrypt.js";
 
 export class userController {
 
@@ -50,17 +50,13 @@ export class userController {
     }
 
     static async getHome(req, res) {
-        let cards = await cardModel.find();
-        let userConnect = await userModel.findOne({ _id: req.session.user });
-        let countCards = 0;
-        for (let i = 0; i < cards.length; i++) {
-            cards[i].user == '' ? countCards += 1 : countCards += 0;
-        }
-        res.render("pages/home.twig", {
-            cards: cards,
-            userConnect: userConnect,
-            countCards: countCards
-        });
+       // let cards = await cardModel.find();
+       // let userConnect = await userModel.findOne({ _id: req.session.user });
+        // let countCards = 0;
+        // for (let i = 0; i < cards.length; i++) {
+        //     cards[i].user == '' ? countCards += 1 : countCards += 0;
+        // }
+        res.render("site/shop.html.twig");
     }
 
     static async buy(req, res) {

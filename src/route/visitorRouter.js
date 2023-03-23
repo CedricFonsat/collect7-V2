@@ -18,7 +18,7 @@ visitorRouter.get("/", async (req, res) => {
     let cardDiscovery = await cardModel.find(req.body).limit(3);
     let collections = await collectionModel.find(req.body).limit(3);
     let bestCard = await cardModel.find(req.body).limit(1);
-    res.render("pages/landing.twig", {
+    res.render("site/index.html.twig", {
       cardsCount: cardsCount,
       collectionsCount: collectionsCount,
       bestUser: bestUser,
@@ -34,19 +34,21 @@ visitorRouter.get("/", async (req, res) => {
 
 /* REGISTRATION */
 
-visitorRouter.get("/registration", async (res) => {
+visitorRouter.get("/register", async (req, res) => {
   try {
-    res.render("pages/authentication/registration.twig");
+    res.render("auth/register.html.twig");
   } catch (error) {
     res.send(error);
   }
 });
 
-visitorRouter.post("/registration", async (req, res) => {
+
+
+visitorRouter.post("/register", async (req, res) => {
   try {
     await userController.setRegistration(req, res);
-    res.redirect("/home");
-    console.log("your connected patrick");
+    res.redirect("/");
+    console.log("welcome to the magic haricot");
   } catch (error) {
     res.send(error);
   }
@@ -55,21 +57,22 @@ visitorRouter.post("/registration", async (req, res) => {
 
 /* CONNEXION */
 
-visitorRouter.get("/connection", async (res) => {
+visitorRouter.get("/login", async (req, res) => {
   try {
-    res.render("pages/authentication/login.twig");
+    res.render("auth/login.html.twig");
   } catch (error) {
     res.send(error);
   }
 });
 
-visitorRouter.post("/connection", async (req, res) => {
+
+visitorRouter.post("/login", async (req, res) => {
   try {
     let user = await userController.setLogin(req, res)
     if (user) {
       req.session.user = user._id
       console.log("jack is connected");
-      res.redirect("/home");
+      res.redirect("/account");
     } else {
       res.status(500)
       res.json(`<p class="form_error"> Vous n'etes pas connecté </p>`)
@@ -92,49 +95,14 @@ visitorRouter.get('/logout', function (req, res) {
 
 /* LOSTPASSWORD TEMPORAIRE */
 
-visitorRouter.get("/lostPassword", async (res) => {
-  try {
-    res.render("pages/lostPassword.twig");
-  } catch (err) {
-    res.send(err);
-  }
-});
 
 
 /* USERMANUAL */
 
-visitorRouter.get("/userManual", async (res) => {
-  try {
-    res.render("pages/userManual.twig")
-  } catch (error) {
-    res.send(error);
-  }
-});
 
 
 /* CONTACT */
 
-visitorRouter.get("/contact", async (res) => {
-  try {
-    res.render("pages/contact.twig")
-  } catch (error) {
-    res.send(error);
-  }
-});
-visitorRouter.get("/gcu", async (res) => {
-  try {
-    res.render("pages/gcu.twig")
-  } catch (error) {
-    res.send(error);
-  }
-});
-visitorRouter.get("/privacyPolicy", async (res) => {
-  try {
-    res.render("pages/privacyPolicy.twig")
-  } catch (error) {
-    res.send(error);
-  }
-});
 
 
 export default visitorRouter;
