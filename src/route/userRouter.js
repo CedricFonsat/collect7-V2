@@ -110,14 +110,9 @@ userRouter.get("/account/update/:id", async (req, res) => {
     // let userCo = await userModel
     //   .findOne({ _id: req.session.user })
     //   .populate("cards");
-    // let cards = userCo.cards;
-    let userConnect = await userModel.findOne({ _id: req.session.user });
 
     
-    res.render("user/edit.html.twig", {
-      userConnect: userConnect,
-      // cards: cards,
-    });
+    res.render("user/account.html.twig");
   } catch (error) {
     res.send(error);
   }
