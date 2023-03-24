@@ -4,7 +4,7 @@ import userController from "../controller/userController.js"
 import collectionModel from "../model/collectionModel.js";
 import userModel from "../model/userModel.js"
 import cardController from "../controller/cardController.js"
-// import { uploadCard, uploadCollections } from "../dependencies/multer.js"
+import {uploadMultipleCollectionAdmin, uploadCard} from "../service/multer.js"
 import cardModel from "../model/cardModel.js";
 
 const adminRouter = Router();
@@ -12,22 +12,50 @@ const adminRouter = Router();
 
 adminRouter.get("/admin", async (req, res) => {
     try {
-        let collection = await collectionModel.find(req.body);
-        let users = await userModel.find(req.body);
-        let usersCount = await userModel.find(req.body).count();
-        let collectionCount = await collectionModel.find(req.body).count();
-        let cardCount = await cardModel.find(req.body).count();
-        res.render("admin/index.html.twig", {
-            collection: collection,
-            users: users,
-            usersCount: usersCount,
-            collectionCount: collectionCount,
-            cardCount: cardCount
+     
+        res.render("admin/index.html.twig");
+    } catch (error) {
+        res.send(error);
+    }
+});
+
+
+adminRouter.post("/admin", uploadMultipleCollectionAdmin, async (req, res) => {
+    try {
+      await collectionController.setCollectionAdmin(req);
+      res.redirect("/admin");
+      console.log("ajout de l'actualité");
+    } catch (error) {
+      res.send(error);
+    }
+  }
+  );
+
+  adminRouter.get("/card", async (req, res) => {
+    try {
+        let collections = await collectionModel.find(req.body);
+        let card = await cardModel.find(req.body);
+        console.log(card.image);
+        res.render("admin/card.html.twig",{
+            collections: collections
         });
     } catch (error) {
         res.send(error);
     }
 });
+
+adminRouter.post("/card", uploadCard.single('image'), async (req, res) => {
+    try {
+        await cardController.setAddCard(req, res);
+        res.redirect("/card");
+        console.log("card successful");
+    } catch (error) {
+        res.send(error);
+    }
+});
+
+
+
 
 
 /* USER */
@@ -75,27 +103,7 @@ adminRouter.get("/dashboardCollection/:id", async (req, res) => {
     }
 });
 
-// adminRouter.post("/dashboardCollectionAdd", uploadCollections.single('imageCollection')
-//     , async (req, res) => {
-//         try {
-//             await collectionController.setAddCollection(req, res);
-//             res.redirect("/dashboardCollection");
-//             console.log("add collection");
-//         } catch (error) {
-//             res.send(error);
-//         }
-//     });
 
-adminRouter.get("/dashboardCollectionUpdate/:id", async (req, res) => {
-    try {
-        let collections = await collectionModel.findOne({ _id: req.params.id }, req.body);
-        res.render("admin/layer/dashboardCollectionUpdate.twig", {
-            collection: collections
-        })
-    } catch (error) {
-        res.send(error);
-    }
-});
 
 // adminRouter.post("/dashboardCollectionUpdate/:id", uploadCollections.single('imageCollection'), async (req, res) => {
 //     try {
@@ -108,6 +116,19 @@ adminRouter.get("/dashboardCollectionUpdate/:id", async (req, res) => {
 //         res.send(error);
 //     }
 // });
+
+adminRouter.get("/dashboardCollectionUpdate/:id", async (req, res) => {
+    try {
+        let collections = await collectionModel.findOne({ _id: req.params.id }, req.body);
+        res.render("admin/layer/dashboardCollectionUpdate.twig", {
+            collection: collections
+        })
+    } catch (error) {
+        res.send(error);
+    }
+});
+
+
 
 
 /* CARD */

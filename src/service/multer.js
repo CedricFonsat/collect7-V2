@@ -14,12 +14,40 @@ const storageOverview = multer.diskStorage({
   const uploadOverview = multer({ storage: storageOverview });
    
   const uploadMultipleOverview = uploadOverview.fields([{ name: 'backgroundImageOverview', maxCount: 10 }, { name: 'imageOverview', maxCount: 10 }])
+ 
+ //------------------------------------- Collection Admin
+ const storageCollectionAdmin = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "./assets/uploads/collection");
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + file.originalname);
+  },
+});
+ 
+const uploadCollectionAdmin = multer({ storage: storageCollectionAdmin });
+ 
+const uploadMultipleCollectionAdmin = uploadCollectionAdmin.fields([{ name: 'logo', maxCount: 10 },{ name: 'cover', maxCount: 10 }, { name: 'image', maxCount: 10 }])
+
+ //------------------------------------- Collection Admin
+ const storageCardAdmin = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "./assets/uploads/card");
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + file.originalname);
+  },
+});
+ 
+const uploadCardAdmin = multer({ storage: storageCardAdmin });
+ 
+const uploadMultipleCardAdmin = uploadCardAdmin.fields([{ name: 'logo', maxCount: 10 },{ name: 'cover', maxCount: 10 }, { name: 'image', maxCount: 10 }])
 
   //------------------------------------ Cards
 
   const storageCard = multer.diskStorage({
     destination: function (req, file, callback) {
-      callback(null, "./assets/uploads/cards");
+      callback(null, "./assets/uploads/card");
     },
     filename: function (req, file, callback) {
       callback(null, Date.now() + file.originalname);
@@ -69,3 +97,5 @@ const storageOverview = multer.diskStorage({
   export {uploadCard}
   export {uploadCollections}
   export {uploadAvatar}
+  export {uploadMultipleCollectionAdmin}
+  export {uploadMultipleCardAdmin}

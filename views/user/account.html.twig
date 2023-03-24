@@ -2,7 +2,8 @@
 
 
 {% block body %}
-	    <div class="rn-author-bg-area bg_image--9 bg_image ptb--150">
+	    <div class="rn-author-bg-area bg_image--9 bg_image ptb--150 position-relative overflow-hidden">
+            <img src="{{userConnect.cover}}" alt="" srcset="" class="position-absolute w-100 top-0">
         <div class="container">
             <div class="row">
             </div>
@@ -16,20 +17,16 @@
                     <div class="author-wrapper">
                         <div class="author-inner">
                             <div class="user-thumbnail">
-                                <img src="assets/images/slider/banner-06.png" alt="">
+                                <img src="{{userConnect.avatar}}" alt="">
                             </div>
                             <div class="rn-author-info-content">
                                 <h4 class="title">{{userConnect.username}}</h4>
-                                <a href="#" class="social-follw">
-                                    <i data-feather="twitter"></i>
-                                    <span class="user-name">it0bsession</span>
-                                </a>
                                 <div class="follow-area">
                                     <div class="follow followers">
-                                        <span>186k <a href="#" class="color-body">followers</a></span>
+                                        <span>{{ userConnect.followers|length }} <a href="#" class="color-body">followers</a></span>
                                     </div>
                                     <div class="follow following">
-                                        <span>156 <a href="#" class="color-body">following</a></span>
+                                        <span>{{ userConnect.following|length }} <a href="#" class="color-body">following</a></span>
                                     </div>
                                 </div>
                                 <div class="author-button-area">
@@ -54,8 +51,6 @@
                                         </div>
                                     </div>
                                     <a href="/account/update/{{userConnect.id}}" class="btn at-follw follow-button edit-btn"><i data-feather="edit"></i></a>
-
-
                                 </div>
                             </div>
                         </div>

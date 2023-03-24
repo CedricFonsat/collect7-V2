@@ -7,6 +7,10 @@ const collectionSchema = new mongoose.Schema({
         type: String,
         required: [true, "Pas de nom de collection"]
     },
+    author: {
+        type: String,
+        default: "Collect7"
+    },
     category: {
         type: String,
         required: [true, "Pas de categorie"]
@@ -15,9 +19,21 @@ const collectionSchema = new mongoose.Schema({
         type: String,
         required: [true, "Pas de description"]
     },
+    logo: {
+        type: String,
+        default: url
+    },
+    cover: {
+        type: String,
+        default: url
+    },
     image: {
         type: String,
         default: url
+    },
+    ifVisible: { 
+        type: Boolean, 
+        default: 0
     },
     cards: { type: [{ type: mongoose.Schema.Types.ObjectId, ref: "card" }] }
 })

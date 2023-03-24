@@ -4,20 +4,36 @@ import { cryptPassword, comparePassword } from "../service/bcrypt.js";
 export class userController {
 
     static async setRegistration(req) {
-        req.body.password = await cryptPassword(req.body.password);
-        let user = new userModel(req.body);
-        await user.save();
-        req.session.user = user._id;
+        let userPseudo= await userModel.findOne({username: req.body.username})
+        if (userPseudo) {
+            console.log(userPseudo);
+            throw "votre pseudo est deja utilisé"
+        }
+        let userMail= await userModel.findOne({email: req.body.email})
+        if (userMail) {
+            throw "votre email est deja utilisé"
+        }
+        req.body.password = await cryptPassword(req.body.password)
+        let user = new userModel(req.body)
+        await user.save()
+        req.session.user = user._id
     }
 
     static async setLogin(req) {
-        let user = await userModel.findOne({ mail: req.body.mail });
-        if (user) {
-            if (comparePassword(req.body.password, user.password)) {
-                return user;
-            }
+        let userPseudo= await userModel.findOne({username: req.body.email})
+        if (userPseudo) {
+            if ( comparePassword(req.body.password,userPseudo.password)) {
+                return userPseudo
+            } 
         }
-        return null;
+        let userMail= await userModel.findOne({email: req.body.email})
+        if (userMail) {
+            if (comparePassword(req.body.password,userMail.password)) {
+                return userMail
+            }
+
+        }
+      return null
     }
 
     static async buyCard(req, res) {
