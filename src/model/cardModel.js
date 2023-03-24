@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 
-const url = "https://i.stack.imgur.com/34AD2.jpg";
+//const url = "https://i.stack.imgur.com/34AD2.jpg";
 
 const cardSchema = new mongoose.Schema({
     name: {

@@ -1,6 +1,7 @@
 import mongoose from 'mongoose'
 
-const url = "https://i.stack.imgur.com/34AD2.jpg";
+const IMGAvatar = "/img/avatar.png";
+const IMGCover = "/img/background.png";
 
 const userSchema = new mongoose.Schema({
   username: {
@@ -17,7 +18,11 @@ const userSchema = new mongoose.Schema({
   },
   avatar: {
     type: String,
-    default: url
+    default: IMGAvatar
+  },
+  cover: {
+    type: String,
+    default: IMGCover
   },
   cardsSold: {
     type: [],
