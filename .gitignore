@@ -9,3 +9,4 @@ coverage/
 *.iml
 .gitignore
 .gitattributes
+.env
